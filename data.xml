@@ -1,0 +1,3 @@
+<TwoWayAudioSession version="2.0" xmlns="http://www.isapi.org/ver20/XMLSchema">
+    <sessionId><!--req, xs:string --></sessionId>
+</TwoWayAudioSession>
