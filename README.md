@@ -17,5 +17,5 @@ Doorbell running on Raspberry Pi 3B+ that is using:
 <code>/usr/bin/sudo /usr/bin/python /home/pi/doorbell.py > /home/pi/doorbell.log 2>&1 &</code>\
 <code>/usr/bin/sudo /usr/bin/python3 /home/pi/GooglePyNotify.py > /home/pi/GooglePyNotify.log 2>&1 &</code>
 
-#GooglePyNotify 
+#GooglePyNotify\
 Test: http://<ip>/Notify?<message>
