@@ -7,8 +7,8 @@ Doorbell running on Raspberry Pi 3B+ that is using:
 #Insallation\
 <code>sudo apt-get install update</code>\
 <code>sudo apt-get install python</code>\
-<code>sudo apt-get install wget</code>\
-<code>sudo apt-get install shutil</code>\
+<code>sudo python -m pip install wget</code>\
+<code>sudo python -m pip install shutil</code>\
 <code>sudo apt-get install python3</code>\
 <code>sudo python3 -m pip install pychromecast</code>
 
