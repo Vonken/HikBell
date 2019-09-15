@@ -10,18 +10,26 @@ import requests
 import threading
 import sys
 
-pb_channel_name = "lerkil"
-pb_api_key = "o.9NgIOV3yKFrMALNXKwFlPjlU2s2T02yd"
+#Hikvision settings
 cameraImageUrl = "http://admin:mannaviken6@192.168.1.205/ISAPI/Streaming/channels/101/picture"
 cameraTwoWayUrl = "http://admin:mannaviken5@192.168.1.205/ISAPI/System/TwoWayAudio/channels/1/audioData"
-google_home_url = 'http://127.0.0.1/Notify?Doorbell'
+
+#Pushbullet settings
 message = "Visitor at the front door"
 outputFolder = "/home/pi/picture.jpg"
-GPIO_Pin = 5
-GPIO_Steady = 2000
 
+#Google Home settings
+google_home_url = 'http://127.0.0.1/Notify?Doorbell'
+
+#Pushbullet settings
+pb_channel_name = "lerkil"
+pb_api_key = "o.9NgIOV3yKFrMALNXKwFlPjlU2s2T02yd"
 pb = Pushbullet(pb_api_key)
 pb_channel = pb.get_channel(pb_channel_name)
+
+#Raspberry Pi settings
+GPIO_Pin = 5
+GPIO_Steady = 2000
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(GPIO_Pin, GPIO.IN)
 
@@ -70,8 +78,9 @@ def Doorbell(channel):
     DoorbellSpeakerNoticeThread = threading.Thread(target=DoorbellSpeakerNotice) 
     DoorbellSpeakerNoticeThread.start()
     
-
+#Add event detection
 GPIO.add_event_detect(GPIO_Pin, GPIO.FALLING, callback=Doorbell, bouncetime=GPIO_Steady)
+
 print("Doorbell is started")
 while True:
     try:
